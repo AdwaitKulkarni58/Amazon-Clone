@@ -55,7 +55,7 @@ export default function Product({
         </div>
       )}
       <button className="mt-auto p-2 text-s bg-gradient-to-b from-yellow-200 to-yellow-400 border border-yellow-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-yellow-500 active:from-yellow-500">
-        Add to cart
+        Add to Cart
       </button>
     </div>
   );
