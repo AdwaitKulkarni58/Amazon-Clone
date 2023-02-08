@@ -3,6 +3,8 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { StarIcon } from "@heroicons/react/24/solid";
 import Currency from "react-currency-formatter";
+import { useDispatch } from "react-redux";
+import { addToBasket } from "../slices/basketSlice";
 
 const max_rating = 5;
 const min_rating = 1;
@@ -15,6 +17,7 @@ export default function Product({
   category,
   image,
 }) {
+  const dispatch = useDispatch();
   const [rating, setRating] = useState(0);
 
   const [hasPrime, setIsPrimeEnabled] = useState(0);
@@ -25,6 +28,8 @@ export default function Product({
     );
     setIsPrimeEnabled(Math.random() < 0.5);
   }, []);
+
+  const addItemToCart = () => {};
 
   return (
     <div className="relative flex flex-col m-5 bg-white z-30 p-10">
@@ -54,7 +59,10 @@ export default function Product({
           <p className="text-gray-500">Free Next-day Delivery</p>
         </div>
       )}
-      <button className="mt-auto p-2 text-s bg-gradient-to-b from-yellow-200 to-yellow-400 border border-yellow-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-yellow-500 active:from-yellow-500">
+      <button
+        onClick={addItemToCart}
+        className="mt-auto p-2 text-s bg-gradient-to-b from-yellow-200 to-yellow-400 border border-yellow-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-yellow-500 active:from-yellow-500"
+      >
         Add to Cart
       </button>
     </div>
