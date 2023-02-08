@@ -43,7 +43,7 @@ export default function CheckoutProduct({
               src="https://links.papareact.com/fdw"
               alt=""
             ></img>
-            <p className="text-gray-500">Free Next-day Delivery</p>
+            <p className="text-gray-500">Free Next-Day Delivery</p>
           </div>
         )}
       </div>
