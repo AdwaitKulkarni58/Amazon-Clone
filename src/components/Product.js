@@ -29,7 +29,18 @@ export default function Product({
     setIsPrimeEnabled(Math.random() < 0.5);
   }, []);
 
-  const addItemToCart = () => {};
+  const addItemToCart = () => {
+    const product = {
+      id,
+      title,
+      price,
+      description,
+      category,
+      image,
+      hasPrime,
+    };
+    dispatch(addToBasket(product));
+  };
 
   return (
     <div className="relative flex flex-col m-5 bg-white z-30 p-10">
